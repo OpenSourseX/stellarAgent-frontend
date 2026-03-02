@@ -1,13 +1,25 @@
-import Button from '../components/Button';
+import Header from '../components/Header';
+import Hero from '../components/Hero';
+import Features from '../components/Features';
+import Pages from '../components/Pages';
+import Vision from '../components/Vision';
+import CTA from '../components/CTA';
+import Footer from '../components/Footer';
 import type { NextPage } from 'next';
 
 const Home: NextPage = () => {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center bg-gray-50">
-      <h1 className="text-3xl font-bold mb-4">Welcome to Stellar Agent Frontend</h1>
-      <p className="mb-6">This is a Next.js application scaffolded manually.</p>
-      <Button>Click me</Button>
-    </main>
+    <>
+      <Header />
+      <main className="pt-16">
+        <Hero />
+        <Features />
+        <Pages />
+        <Vision />
+        <CTA />
+      </main>
+      <Footer />
+    </>
   );
 };
 
