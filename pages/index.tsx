@@ -1,10 +1,10 @@
-import Header from '../components/Header';
-import Hero from '../components/Hero';
-import Features from '../components/Features';
-import Pages from '../components/Pages';
-import Vision from '../components/Vision';
-import CTA from '../components/CTA';
-import Footer from '../components/Footer';
+import Header from '../apps/components/Header';
+import Hero from '../apps/components/Hero';
+import Features from '../apps/components/Features';
+import Pages from '../apps/components/Pages';
+import Vision from '../apps/components/Vision';
+import CTA from '../apps/components/CTA';
+import Footer from '../apps/components/Footer';
 import type { NextPage } from 'next';
 
 const Home: NextPage = () => {

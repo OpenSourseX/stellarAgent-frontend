@@ -2,6 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+     /* Apply gradient via explicit background-image since Tailwind
+       doesn't expose the from-/via-/to- gradient stop utilities
+       in a way that @apply can consume */
+    /* fallback using hardcoded Tailwind default color values */
+    background-image: linear-gradient(
+      to bottom right,
+      #0f172a, /* slate-950 */
+      #1e3a8a, /* blue-950 */
+      #0f172a  /* slate-950 */
+    );
+  }
+}
+
+@layer components {
+  .gradient-text {
+    /* gradient text: fallback to manual gradient since @apply can't handle
+       color-stop utilities */
+    background-image: linear-gradient(
+      to right,
+      #60a5fa, /* blue-400 */
+      #3b82f6, /* blue-500 */
+      #22d3ee  /* cyan-400 */
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .glass-effect {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+  }
+
+  .glow-border {
+    position: relative;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  .glow-border::before {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(
+      to right,
+      transparent,
+      rgba(59, 130, 246, 0.2),
+      transparent
+    );
+    content: '';
+  }
+}
+
 html,
 body {
   padding: 0;
